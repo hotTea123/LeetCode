@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
  //(a,b)和(b,a mod b)的公约数一样，其中b为a/b中较小的那个数
 int gcd(int a,int b){
     if(a < b)
@@ -9,3 +10,4 @@ int gcd(int a,int b){
         return a;
     return gcd(b, a%b);
 }
+//两个数a,b的最大公约数×最小公倍数 = a*b
