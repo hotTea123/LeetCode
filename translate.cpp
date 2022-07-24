@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//[[47,220],[65,1],[98,113],[126,196],[186,218],[320,205],[686,317],[707,325],[754,104],[781,105]]
 void translate(string& s){
     for(int i=0;i<s.size();i++){
         if(s[i] == '[')
