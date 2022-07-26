@@ -2,10 +2,13 @@
 using namespace std;
 
 /*
-    思路1：只要sequences里面能拿到nums中每个数字的偏序关系，则一定能得到唯一的nums
-    用一个n+1大小的vector存每个数字i的下一个数字(即规定他们的偏序关系)，再遍历sequences找是否存在那样
-  的偏序关系，用bool标志是否在sequences中找到了某个数字的偏序关系，只有nums中所有数字都是bool才能返回
-  成功
+    只要sequences里面能拿到nums中每个数字的偏序关系，则一定能得到唯一的nums
+具体做法：
+  1.直接求：因为该题中每个数字仅有一个直接前驱数字和一个直接后继数字，因此可以直接对着nums数组判断某个数i
+  和其后继数字j是否出现在了sequences中。用一个n+1大小的vector存每个数字i的下一个数字(即规定他们的偏序
+  关系)，再遍历sequences找是否存在那样的偏序关系，用bool标志是否在sequences中找到了某个数字的偏序关系，
+  只有nums中所有数字都是bool才能返回成功。
+  2.使用拓扑排序：该方法可用于判断一个节点有多个前驱结点和后继节点的情况，适用性更广泛
 */
 class Solution {
 public:

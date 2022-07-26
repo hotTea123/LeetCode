@@ -10,6 +10,7 @@ using namespace std;
     如果你想取小于3的最后一个元素，则需要加1。
     3.mid = (low+high)/2有可能发生int越界(c++中)，此时可以取low+(high-low)/2
         mid = (low+high+1)/2 对应于 low+(high-low+1)/2
+    4.low和high最后的值一定相等，但是mid可能不会跟他们相等，除非再执行一次mid = (low+high)/2
 */
 
 class Solution {

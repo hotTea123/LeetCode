@@ -1,19 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*
-    实现中的注意事项：
-    1.添加和删除的时候，使用一个vector存要添加和删除的前一个位置
-    2.添加时，待添加节点的层数每次往上加一层的概率是50%
-    3.添加时，对于多个值相同的节点需要进行妥善的处理，我在每一层都找到与待添加nums值相同的最后一个节点，
-    并把他放到更新数组里面，这样就可以保证最终待添加节点也会在与其值相同的所有节点的后面
-    4.删除时，对于多个值相同的节点的处理有些棘手，如果只是在每层单纯的比较值，不管你是删除所有值相同的
-    第一个节点还是最后一个节点，都可能导致你最后每层要删除的不是同一个节点，而是一些值相同的不同节点，
-    因此需进行地址的比较以确保每层删除同一节点，具体做法是：设置一个bool变量标志是否是第一次找到元素num，
-    因为是从上层往下层遍历，因此找到的那个num是level最多且那层level上的第一个与num相等的元素，之后在
-    后面每一层查找的时候都需要判断找到的节点地址与第一次找到的那个是否一致。
-*/
-
 struct SkiplistNode{
     int val;
     vector<SkiplistNode*> next;
@@ -93,7 +80,6 @@ public:
                 p = p->next[i];
             }
         }
-        
         if(deleteNode[0] == nullptr)
             return false;
         p = deleteNode[0]->next[0];   //待删除节点
@@ -106,16 +92,3 @@ public:
         return true;
     }
 };
-
-int main(){
-    Skiplist skiplist;
-    skiplist.add(5);
-    bool res = skiplist.search(5);
-    for(int i=0;i < 10;i++){
-        skiplist.add(i);
-    }
-    res = skiplist.search(7);
-    res = skiplist.erase(5);
-    res = skiplist.search(5);
-    return 0;
-}
