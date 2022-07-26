@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//官方写法，状态转移
 enum ExprStatus {
     VALUE = 0, // 初始状态
     NONE,      // 表达式类型未知
