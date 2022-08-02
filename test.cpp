@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int* fun1(int x){
-    return &x;
-}
+// int* fun1(int x){
+//     return &x;
+// }
 
-int* fun2(int x){
-    int y = x;
-    return &y;
-}
+// int* fun2(int x){
+//     int y = x;
+//     return &y;
+// }
 
 int* fun3(int& x){
     return &x;
@@ -32,6 +32,8 @@ void testVectorString(){
         --it;
     }
 }
+
+
 
 const int MOD = 1e9 + 7;
 
@@ -126,6 +128,9 @@ int main(){
     // int res = count(6485, nums);
     //int res = right(-2);
     //findExample();
-    emplace_back_test();
+    //emplace_back_test();
+    set<int> A = {1,2,3};
+    if(A.contains(1))
+        cout << "1" << endl;
     return 0;
 }
