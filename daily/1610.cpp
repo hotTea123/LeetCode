@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -68,7 +69,7 @@ public:
             }
 
             //是否超过360度
-            if (flag == 0)
+            if (!flag)
                 max = des_index - k + 1;
             else
                 max = min(des_index + A.size() - k + 1, A.size());
