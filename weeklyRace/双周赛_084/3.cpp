@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    用一个map记录每个任务的上一个完成时间
+*/
 class Solution {
 public:
     long long taskSchedulerII(vector<int>& tasks, int space) {

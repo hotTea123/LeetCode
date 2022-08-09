@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//2022.8.8 每日一题 
+//暴力解法
 class Solution {
 private:
     int findSpecial(string& s, int i, int j){

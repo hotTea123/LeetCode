@@ -1,9 +1,5 @@
-#include<vector>
-#include<algorithm>
-#include<functional>
+#include<bits/stdc++.h>
 using namespace std;
-
-#define MAXINT 2147483647
 
 class Solution {
 private:
@@ -58,7 +54,7 @@ public:
             res += nums[i];
         }
 
-        if(res > MAXINT)
+        if(res > INT_MAX)
             return -1;
 
         return res;

@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    又是脑筋急转弯的题，用给定数组减去数组[1,2,3,4...,n]，如果减去后有k个数的值相同，则表示这k个数可组
+  成好数组，坏数组+好数组=总的数组个数(n*(n-1)/2)
+*/
 class Solution {
 public:
     long long countBadPairs(vector<int>& nums) {

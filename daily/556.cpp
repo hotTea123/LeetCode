@@ -9,7 +9,6 @@ private:
     int GreaterElement(vector<int>& nums){
         int resIndex = 0; 
         pair<int, int> minGreaterPos(nums.size(), 0);
-
         int i, j;
         for(i=0;i < nums.size() - 1;i++){
             for(j=i+1;j < nums.size();j++){

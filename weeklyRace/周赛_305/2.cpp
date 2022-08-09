@@ -5,7 +5,6 @@ class UnionFindSet{
 private:
     vector<int> parent;
     vector<int> rank;
-    int count;
 
 public:
     UnionFindSet(int n){
@@ -13,7 +12,6 @@ public:
         rank = vector<int>(n, 1);
         for(int i=0;i < n;i++)
             parent[i] = i;
-        count = 1;
     }
 
     //返回当前节点的根节点
@@ -35,15 +33,25 @@ public:
             parent[xParent] = yParent;
             rank[yParent] += rank[xParent];
         }
-        int a = max(rank[xParent], rank[yParent]);
-        count = max(count, a);
     }
 
     int getRank(int x){
         return rank[Find(x)];
     }
+};
 
-    int getCount(){
-        return count;
+class Solution {
+public:
+    int reachableNodes(int n, vector<vector<int>>& edges, vector<int>& restricted) {
+        unordered_set<int> restrictedNode;
+        for(int i:restricted)
+            restrictedNode.insert(i);
+        UnionFindSet ufs(n);
+        for(auto edge:edges){
+            if(restrictedNode.find(edge[0]) != restrictedNode.end() || restrictedNode.find(edge[1]) != restrictedNode.end())
+                continue;
+            ufs.Union(edge[0], edge[1]);
+        }
+        return ufs.getRank(0);
     }
 };
