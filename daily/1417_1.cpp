@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// 我自己的笨比实现
 class Solution {
 private:
     bool classify(char ch){
