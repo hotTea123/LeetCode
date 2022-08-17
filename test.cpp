@@ -116,6 +116,19 @@ void emplace_back_test(){
     return;
 }
 
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        make_heap(nums.begin(), nums.end());
+        while(k > 1){
+            --k;
+            pop_heap(nums.begin(), nums.end());
+            nums.pop_back();
+        }
+        return nums[0];
+    }
+};
+
 int main(){
     // cout<< generateRandNum(100) << endl;
     // generateRandNum(100);
@@ -129,8 +142,10 @@ int main(){
     //int res = right(-2);
     //findExample();
     //emplace_back_test();
-    set<int> A = {1,2,3};
-    if(A.contains(1))
-        cout << "1" << endl;
+    // set<int> A = {1,2,3};
+    // if(A.contains(1))
+    //     cout << "1" << endl;
+    vector<int> nums = {3,2,3,1,2,4,5,5,6};
+    int res = Solution().findKthLargest(nums, 4);
     return 0;
 }
