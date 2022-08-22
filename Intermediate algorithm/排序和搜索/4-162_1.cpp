@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//二分
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) {
